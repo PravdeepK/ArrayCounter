@@ -1,0 +1,40 @@
+//scanner imported
+import java.util.Scanner;
+
+public class Task2 {
+    public static void main(String[] args) {
+        //created array with the max size of 10
+        int[] numbers = new int[10];
+        int count = 0;
+
+        //create scanner input
+        Scanner scanner = new Scanner(System.in);
+
+        //ask user to input numbers until they put in '-1' to stop input
+        System.out.println("enter a number to store in the array, to stop input type '-1':");
+        while (true) {
+            int input = scanner.nextInt();
+            if (input == -1) {
+                break;
+            }
+            //checks to see if the count is over 10, if not it gets added to the array
+            if (count < numbers.length) {
+                numbers[count] = input;
+                count++;
+            //if it is over 10 something gets printed out saying you cant add more
+            } else {
+                System.out.println("array is at 10. you can not enter more");
+                break;
+            }
+        }
+
+        //displays the numbers in the array once input is closed
+        System.out.println("array contents:");
+        for (int i = 0; i < count; i++) {
+            System.out.println("Index " + i + ": " + numbers[i]);
+        }
+
+        //close scanner
+        scanner.close();
+    }
+}
